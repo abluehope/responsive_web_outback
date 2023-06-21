@@ -11,6 +11,7 @@ $(function () {
   const MainSlide = new Swiper(".main_slide", {
     loop: true,
     parallax: true,
+    speed: 600,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -48,5 +49,13 @@ $(function () {
     const idx = $(this).index();
     $(this).addClass("on").siblings().removeClass("on");
     MainSlide.slideTo(idx);
+  });
+
+  $(".MainItm .arrows .left").on("click", function () {
+    ItmSlide.slidePrev();
+  });
+
+  $(".MainItm .arrows .right").on("click", function () {
+    ItmSlide.slideNext();
   });
 });
